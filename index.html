@@ -1,44 +1,13 @@
 <!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#24002f"><meta name="description" content="Royal Coins — демонстрационный слот с игровыми кредитами."><title>Royal Coins — Demo Slot</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="app-shell">
-  <header class="jackpots">
-    <div class="jackpot top"><span class="mini-icon">🏆</span><small>УЧАСТВУЙ</small><b>56 000 000.00</b></div>
-    <div class="jackpot top"><span class="mini-icon">💣</span><b>1 080 000 000.00</b><small>SUPER PRIZE</small></div>
-    <div class="jackpot top"><span class="mini-icon">🎯</span><small>УЧАСТВУЙ</small><b>173 600 000.00</b></div>
-  </header>
-  <section class="brand-area">
-    <div class="side-jackpot grand"><small>GRAND</small><b>100000.00</b></div>
-    <div class="side-jackpot major"><small>MAJOR</small><b>15000.00</b></div>
-    <div class="side-jackpot minor"><small>MINOR</small><b>5000.00</b></div>
-    <div class="side-jackpot mini"><small>MINI</small><b>2500.00</b></div>
-    <div class="logo"><div class="coin-mark">2</div><div class="logo-text">ROYAL COINS</div></div>
-  </section>
-  <main>
-    <section class="reel-frame" aria-label="Игровые барабаны">
-      <div class="reel-label left">5<br> L<br> I<br> N<br> E<br> S</div><div class="reel-label right">5<br> L<br> I<br> N<br> E<br> S</div>
-      <div class="reels" id="reels" aria-live="polite">
-        <div class="reel"><div class="symbol">🍇</div><div class="symbol">🍇</div><div class="symbol">🍉</div></div>
-        <div class="reel"><div class="symbol">🍊</div><div class="symbol">🍊</div><div class="symbol">🍊</div></div>
-        <div class="reel"><div class="symbol">🍊</div><div class="symbol">🔔</div><div class="symbol">🍒</div></div>
-      </div>
-      <div class="win-flash" id="winFlash"></div>
-    </section>
-    <div class="last-win"><span>ПРЕДЫДУЩИЙ ВЫИГРЫШ</span><strong id="lastWin">0.00</strong></div>
-    <section class="controls">
-      <button class="round-btn auto" id="autoBtn" aria-label="Автоигра">»</button>
-      <button class="spin-btn" id="spinBtn"><span class="spin-arrows">⟳</span><b>КРУТИТЬ</b><small>УДЕРЖИВАЙТЕ ДЛЯ ТУРБО</small></button>
-      <button class="round-btn turbo" id="turboBtn" aria-label="Турбо">A</button>
-    </section>
-    <div class="bet-control"><button id="betDown" aria-label="Уменьшить ставку">−</button><div><small>СТАВКА</small><strong id="betValue">100.00</strong></div><button id="betUp" aria-label="Увеличить ставку">+</button></div>
-    <div class="footer-row"><div class="balance"><small>СЧЁТ</small><strong id="balance">10000.00</strong></div><div class="footer-actions"><button id="soundBtn" aria-label="Звук">🔊</button><button id="infoBtn" aria-label="Правила">ⓘ</button><button id="menuBtn" aria-label="Меню">☰</button></div></div>
-    <div class="status" id="status">ДЕМО-РЕЖИМ · ИГРОВЫЕ КРЕДИТЫ</div>
-  </main>
-</div>
-<div class="modal hidden" id="infoModal"><div class="modal-card"><button class="close" id="closeInfo">×</button><h2>ИНФОРМАЦИЯ ОБ ИГРЕ</h2><div class="rule-grid"><div><b>🍒 🍒 🍒</b><span>3 символа — выигрыш по линии</span></div><div><b>👑</b><span>3 символа бонуса запускают бонусный раунд</span></div><div><b>🔔</b><span>Wild заменяет обычные символы</span></div><div><b>💰</b><span>Джекпоты в этой демо-версии декоративные</span></div></div><h3>БОНУС ИГРА</h3><p>Три бонусных символа могут запустить демонстрационный бонусный раунд. В нём начисляются дополнительные игровые кредиты.</p><h3>ЛИНИИ ВЫПЛАТ</h3><p>Выигрышные линии считаются слева направо. В демо включено пять линий. Игра не использует реальные деньги и не поддерживает денежные выплаты.</p></div></div>
-<div class="toast" id="toast"></div>
-<script src="app.js"></script>
-</body></html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#180b25"><meta name="description" content="Royal Prank Casino — игровая демоверсия с виртуальными монетами"><title>ROYAL PRANK CASINO</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="casino">
+<header class="header"><div><div class="eyebrow">★ VIRTUAL ENTERTAINMENT ★</div><h1>👑 ROYAL <span>CASINO</span></h1></div><div class="demo-badge">DEMO<br><small>NO REAL MONEY</small></div></header>
+<section class="wallet"><div><small>ВАШ БАЛАНС · ФАН-МОНЕТЫ</small><strong id="balance">10 000</strong></div><button id="daily" class="secondary">🎁 Бонус дня</button></section>
+<nav id="game-list" class="game-list" aria-label="Выбор игры"></nav>
+<main class="game-panel"><div class="game-heading"><div><div class="eyebrow" id="game-category">ROYAL GAMES</div><h2 id="game-title">🎰 Слоты</h2></div><div class="round-tag">РАУНД <b id="round">001</b></div></div>
+<div id="game-area" class="game-area"></div>
+<div class="bet-row"><button id="bet-minus" aria-label="Уменьшить ставку">−</button><div><small>СТАВКА</small><strong id="bet">100</strong></div><button id="bet-plus" aria-label="Увеличить ставку">+</button></div>
+<div id="message" class="message" aria-live="polite">Выбери игру и испытай удачу!</div>
+<div class="history-head"><b>ПОСЛЕДНИЕ РАУНДЫ</b><button id="clear-history" class="text-button">Очистить</button></div><ol id="history" class="history"><li class="empty">Здесь появятся результаты игры</li></ol>
+</main>
+<footer><span>ROYAL PRANK · ДЕМО-СИМУЛЯТОР</span><button id="reset" class="text-button">↻ Сбросить баланс</button><p>Все кредиты и результаты вымышлены. Нет депозитов, платежей или вывода денег.</p></footer></div><script src="app.js"></script></body></html>
