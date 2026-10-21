@@ -1,2 +1,46 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#180b25"><title>Royal Prank Casino</title><link rel="stylesheet" href="prank-casino.css"></head><body><div class="casino"><header><div><small>VIRTUAL ENTERTAINMENT</small><h1>👑 ROYAL <span>CASINO</span></h1></div><b class="demo">DEMO<br><small>NO REAL MONEY</small></b></header><section class="wallet"><div><small>БАЛАНС · ФАН-МОНЕТЫ</small><strong id="balance">10 000</strong></div><button id="daily">🎁 Бонус дня</button></section><nav id="games" aria-label="Выбор игры"></nav><main><div class="gamehead"><div><small>ROYAL GAMES · ДЕМО</small><h2 id="title">🎰 Слоты</h2></div><small>РАУНД <b id="round">001</b></small></div><section id="arena" aria-live="polite"></section><div class="bet"><button id="minus">−</button><div><small>СТАВКА</small><strong id="stake">100</strong></div><button id="plus">+</button></div><p id="message" aria-live="polite">Выбери игру и испытай удачу!</p><div class="history-head"><b>ПОСЛЕДНИЕ РАУНДЫ</b><button id="clear">Очистить</button></div><ol id="history"><li>Здесь появятся результаты</li></ol></main><footer><button id="reset">↻ Сбросить баланс</button><p>Пранк-демо: все кредиты и результаты вымышлены. Нет депозитов, платежей или вывода денег.</p></footer></div><script src="prank-casino.js"></script></body></html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#073d73"><title>Royal Prank Casino — Demo</title>
+<link rel="stylesheet" href="prank-casino.css">
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+<button class="iconbtn" id="menuBtn" aria-label="Меню">☰</button>
+<div class="brand">Казино <small>DEMO</small></div>
+<button class="iconbtn" id="searchBtn" aria-label="Поиск">⌕</button>
+<button class="iconbtn" id="favBtn" aria-label="Избранное">★</button>
+<button class="coinbtn" id="daily" aria-label="Бонус дня">🪙<i>+</i></button>
+</header>
+<div class="demo-strip">ДЕМО-РЕЖИМ · ТОЛЬКО ВИРТУАЛЬНЫЕ МОНЕТЫ</div>
+<section class="hero">
+<div class="hero-copy"><span class="eyebrow">ROYAL PRANK</span><h1>ИГРАЙ<br>РАДИ ФАНА</h1><p>10 мини-игр · 0 реальных денег</p><a href="#gamezone" class="hero-cta">ИГРАТЬ СЕЙЧАС</a></div>
+<div class="hero-art" aria-hidden="true"><span class="orb orb1">💎</span><span class="orb orb2">🎰</span><span class="orb orb3">🪙</span><span class="hero-crown">👑</span></div>
+<div class="hero-dots">● ○ ○ ○ ○ ○</div>
+</section>
+<section class="wallet">
+<div class="wallet-label"><span>🪙</span><div><small>ВАШ ДЕМО-БАЛАНС</small><strong id="balance">10 000</strong></div></div>
+<div class="wallet-actions"><button id="walletBonus">🎁 Бонус</button><button id="reset">↻</button></div>
+</section>
+<section class="catalog">
+<div class="section-title"><span class="title-icon">♛</span><div><h2>Популярные игры</h2><small>Выбери свою удачу</small></div><span class="seeall">10 ИГР</span></div>
+<div class="category-chips"><span class="chip selected">🔥 Популярные</span><span class="chip">🎮 Все игры</span><span class="chip">🚀 Crash</span><span class="chip">🎲 Случайные</span></div>
+<nav id="games" aria-label="Выбор игры"></nav>
+</section>
+<main id="gamezone">
+<div class="gamehead"><div><small>ROYAL GAMES · ДЕМО</small><h2 id="title">🎰 Слоты</h2></div><span class="round-pill">РАУНД <b id="round">001</b></span></div>
+<section id="arena" aria-live="polite"></section>
+<div class="bet"><button id="minus" aria-label="Уменьшить ставку">−</button><div><small>СТАВКА · ФАН-МОНЕТЫ</small><strong id="stake">100</strong></div><button id="plus" aria-label="Увеличить ставку">+</button></div>
+<p id="message" aria-live="polite">Выбери игру и испытай удачу!</p>
+<div class="history-head"><b>ПОСЛЕДНИЕ РАУНДЫ</b><button id="clear">Очистить</button></div><ol id="history"><li>Здесь появятся результаты</li></ol>
+</main>
+<section class="promo"><div><small>ROYAL BONUS</small><h2>БОНУС ДНЯ</h2><p>Забери +500 фан-монет</p><button id="promoBonus">ПОЛУЧИТЬ БОНУС</button></div><div class="promo-art">🎁✨🪙</div></section>
+<footer><p>Пранк-демо: все кредиты и результаты вымышлены. Нет депозитов, платежей или вывода денег.</p><span>ROYAL PRANK CASINO · VIRTUAL PLAY ONLY</span></footer>
+</div>
+<script src="prank-casino.js"></script>
+<script>
+(()=>{const daily=document.getElementById('daily');const bonus=document.getElementById('walletBonus');const promo=document.getElementById('promoBonus');[daily,bonus,promo].forEach(b=>b&&b.addEventListener('click',()=>document.getElementById('daily').click()));const search=document.getElementById('searchBtn');search.addEventListener('click',()=>{let q=prompt('Найти игру: слоты, Mines, Crash, рулетка…');if(!q)return;const btn=[...document.querySelectorAll('.game-button')].find(x=>x.textContent.toLowerCase().includes(q.toLowerCase()));if(btn){btn.click();document.getElementById('gamezone').scrollIntoView({behavior:'smooth'});}else alert('Игра не найдена. Попробуй другое название.');});document.getElementById('menuBtn').addEventListener('click',()=>document.querySelector('.catalog').scrollIntoView({behavior:'smooth'}));document.getElementById('favBtn').addEventListener('click',()=>alert('⭐ Избранное: нажми на игру, чтобы выбрать её для демо-раунда.'));document.querySelectorAll('.chip').forEach(chip=>chip.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));chip.classList.add('selected');if(chip.textContent.includes('Crash')){document.querySelector('[data-id="crash"]').click();document.getElementById('gamezone').scrollIntoView({behavior:'smooth'});}else if(chip.textContent.includes('Случайные')){const all=[...document.querySelectorAll('.game-button')];all[Math.floor(Math.random()*all.length)].click();document.getElementById('gamezone').scrollIntoView({behavior:'smooth'});}}));})();
+</script>
+</body></html>
